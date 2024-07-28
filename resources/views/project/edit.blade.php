@@ -25,7 +25,7 @@
             </div>
             <div class="mb-3">
 
-                <label for="project-type_id" class="form-label">type del post - {{ old('type_id') }}</label>
+                <label for="project-type_id" class="form-label">type</label>
                 <select class="form-select" aria-label="Default select example" name="type_id">
                     <option value="">Seleziona type</option>
                     @foreach ($types as $type)
@@ -43,7 +43,6 @@
             </div>
             <button class="btn btn-primary">Aggiorna post</button>
         </form>
-
 
 
     </div>
