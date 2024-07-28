@@ -19,7 +19,8 @@ class ProjectController extends Controller
     public function index()
     {
         $projects= Project::all();
-        return view('project.index',compact("projects"));
+        $types= Type::all();
+        return view('project.index',compact("projects","types"));
     }
 
     /**
@@ -74,8 +75,8 @@ return redirect()->route('admin.Projects.index')->with('message', 'Progetto crea
      */
     public function show(Project $project)
 {
-    
-    return view('project.show', compact('project'));
+    $types= Type::all();
+    return view('project.show', compact('project',"types"));
 }
 
     /**

@@ -48,9 +48,11 @@
 
 
                             <td>
-                                {{-- @foreach ($project->skills as $skill)
-                                    {{ $skill }}
-                                @endforeach --}}
+                                @foreach ($types as $type)
+                                    @if ($type->id == $project->type_id)
+                                        {{ $type->title }}
+                                    @endif
+                                @endforeach
                             </td>
                             <td>
                                 <div class="d-flex gap-2 justify-content-end">

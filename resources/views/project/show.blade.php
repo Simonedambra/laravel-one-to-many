@@ -22,7 +22,11 @@
         </p>
 
         <hr>
-        Category: {{ $project->category?->title ?: 'Categoria non definita' }}
+        Category:@foreach ($types as $type)
+            @if ($type->id == $project->type_id)
+                {{ $type->title }}
+            @endif
+        @endforeach
 
         <hr>
         @if ($project->img)
