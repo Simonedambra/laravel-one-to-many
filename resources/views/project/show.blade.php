@@ -20,13 +20,12 @@
 
 
         </p>
-
         <hr>
-        Category:@foreach ($types as $type)
-            @if ($type->id == $project->type_id)
-                {{ $type->title }}
-            @endif
-        @endforeach
+        Category:@if ($project->type?->title)
+            {{ $project->type->title }}
+        @else
+            non sono presenti type
+        @endif
 
         <hr>
         @if ($project->img)

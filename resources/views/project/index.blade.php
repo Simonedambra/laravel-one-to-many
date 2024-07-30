@@ -29,7 +29,7 @@
                     <tr>
                         <th scope="col" class="col">#</th>
                         <th scope="col" class="col-7">title</th>
-                        <th scope="col" class="col">skills</th>
+                        <th scope="col" class="col">types</th>
                         <th scope="col" class="col-2 text-right"></th>
                     </tr>
                 </thead>
@@ -48,11 +48,11 @@
 
 
                             <td>
-                                @foreach ($types as $type)
-                                    @if ($type->id == $project->type_id)
-                                        {{ $type->title }}
-                                    @endif
-                                @endforeach
+                                @if ($project->type?->title)
+                                    {{ $project->type->title }}
+                                @else
+                                    non sono presenti type
+                                @endif
                             </td>
                             <td>
                                 <div class="d-flex gap-2 justify-content-end">

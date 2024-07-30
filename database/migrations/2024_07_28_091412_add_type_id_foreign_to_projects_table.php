@@ -18,7 +18,7 @@ return new class extends Migration
             //crea la chiave esterna
             $table->foreign('type_id')
                 ->references('id')
-                ->on('projects')
+                ->on('types')
                 ->nullOnDelete();
 
             

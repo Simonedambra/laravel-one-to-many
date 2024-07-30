@@ -11,4 +11,7 @@ class Project extends Model
     
     protected $table = 'projects';
     
+    public function type(){
+        return $this->belongsTo(Type::class);
+    }
 }
